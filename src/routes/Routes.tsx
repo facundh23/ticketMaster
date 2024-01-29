@@ -1,16 +1,20 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ProfilePage from '../views/Profile/ProfilePage'
+import DetailPage from '../views/Detail/DetailPage'
+import MyInfo from '../views/Profile/components/MyInfo/MyInfo'
+import LikedPage from '../views/Profile/components/LikedEvents/LikedPage'
+import HomePage from '../views/Home/HomePage'
 
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <div>Home Page</div>,
+        element: <HomePage />,
         errorElement: <div>Error Page</div>
     },
     {
         path: 'detail/:eventId',
-        element: <div>Detail</div>
+        element: <DetailPage />
     },
     {
         path: 'profile',
@@ -18,11 +22,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'my-info',
-                element: <div>My info</div>
+                element: <MyInfo />
             },
             {
                 path: 'liked-events',
-                element: <div>Liked Events</div>
+                element: <LikedPage />
             }
         ]
     }
