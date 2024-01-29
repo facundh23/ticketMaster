@@ -1,8 +1,10 @@
-import React from 'react'
+import { useState, useEffect, forwardRef } from 'react'
 
-type Props = {}
 
-const Navbar = (props: Props) => {
+type Props = {
+    onSearch: () => void
+}
+const Navbar = ({ onSearch }) => {
     return (
         <div>Navbar</div>
     )
