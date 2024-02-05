@@ -5,6 +5,7 @@ const Events = () => {
 
     const { data, error, isLoading, fetchEvents } = useEventsResults();
 
+    console.log(data)
     return (
         <EventList />
     )

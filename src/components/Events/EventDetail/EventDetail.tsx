@@ -1,4 +1,4 @@
-import React from 'react'
+import styles from './EventDetail.module.css'
 
 type Props = {}
 
