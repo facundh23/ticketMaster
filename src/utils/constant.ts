@@ -1,1 +1,1 @@
-export const LIKED_EVENTS_STORAGE_KEY = "liked_events";
+export const LIKED_EVENTS_STORAGE_KEY: string = "liked_events";
