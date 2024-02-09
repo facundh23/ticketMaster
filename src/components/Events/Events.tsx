@@ -1,13 +1,29 @@
-import useEventsResults from '../../data/data';
-import EventList from './EventList/EventList';
 
-const Events = () => {
+import { useNavigate } from 'react-router-dom';
+import EventDetail from './EventDetail/EventDetail';
 
-    const { data, error, isLoading, fetchEvents } = useEventsResults();
+const Events = ({ searchTerm, events }) => {
 
-    console.log(data)
+    const navigate = useNavigate();
+
+    const renderEvents = () => {
+        let filteredEvents = events;
+
+        if (searchTerm.length > 0) {
+            filteredEvents = filteredEvents.filter((term) => term.name.toLowerCase().includes(searchTerm));
+        }
+
+        return filteredEvents.map((event) => (
+            <EventDetail key={event.id} {...event} />
+        ))
+    }
+
+
     return (
-        <EventList />
+        <>
+            <h2>Events</h2>
+            {renderEvents()}
+        </>
     )
 }
 

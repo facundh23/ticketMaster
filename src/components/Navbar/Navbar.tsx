@@ -4,7 +4,7 @@ import { useState, useEffect, forwardRef } from 'react'
 type Props = {
     onSearch: () => void
 }
-const Navbar = ({ onSearch }) => {
+const Navbar  = ({ onSearch }:Props) => {
     return (
         <div>Navbar</div>
     )
