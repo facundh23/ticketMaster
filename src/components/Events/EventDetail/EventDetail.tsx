@@ -1,8 +1,9 @@
+
 import styles from './EventDetail.module.css'
 
-type Props = {}
 
-const EventDetail = (props: Props) => {
+
+const EventDetail = () => {
     return (
         <div>EventDetail</div>
     )

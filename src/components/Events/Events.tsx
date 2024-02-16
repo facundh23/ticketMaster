@@ -6,6 +6,10 @@ const Events = ({ searchTerm, events }) => {
 
     const navigate = useNavigate();
 
+    const handleEventItemClick = (id:string) => {
+        navigate(`/detail/${id}`)
+    }
+
     const renderEvents = () => {
         let filteredEvents = events;
 
