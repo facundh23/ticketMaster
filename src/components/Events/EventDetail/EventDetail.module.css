@@ -1,0 +1,47 @@
+.eventItemContainer {
+    display: flex;
+    margin: 24px 0px;
+    align-items: flex-start;
+  }
+  
+  .eventInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 14px;
+  }
+  
+  .eventInfoTitle {
+    margin: 0px;
+    font-size: 22px;
+  }
+  
+  .eventInfoParagraph {
+    text-align: left;
+    margin: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+  
+  .eventInfoBtn {
+    margin-top: 10px;
+  }
+  
+  .hearthImage {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    cursor: pointer;
+    color: red;
+  }
+  
+  .imageContainer {
+    position: relative;
+  }
+  
