@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import EventDetail from './EventDetail/EventDetail';
 
 const Events = ({ searchTerm, events }) => {
-
+    console.log(events)
     const navigate = useNavigate();
 
     const handleEventItemClick = (id:string) => {
@@ -18,7 +18,7 @@ const Events = ({ searchTerm, events }) => {
         }
 
         return filteredEvents.map((event) => (
-            <EventDetail key={event.id} {...event} />
+            <EventDetail key={event.id} {...event} handleEventItemClick={handleEventItemClick} />
         ))
     }
 

@@ -32,7 +32,7 @@ const EventDetail = ({name,id, images, info, onEventClick}:Props) => {
                     :
                     <CiHeart className={styles.hearthImage} onClick={handleHearthClick} />
                 }
-                <img src={images} alt='Artist Image' width={200} height={200} />
+                <img src={images[0].url} alt='Artist Image' width={200} height={200} />
             </div>
             <div className={styles.eventInfoContainer}>
                 <h4 className={styles.eventInfoTitle}>{name}</h4>

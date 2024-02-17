@@ -3,43 +3,49 @@ import useEventsResults from '../../data/data';
 import styles from './Home.module.css';
 import Events from '../../components/Events/Events';
 
-interface Event {
+// interface Event {
 
-}
+// }
 
-interface Page {
+// interface Page {
 
-}
+// }
 
-interface EventsData {
-    _embedded: {
-        events: Event[]
-    };
-    page?: Page
-}
+// interface EventsData {
+//     _embedded: {
+//         events: Event[]
+//     };
+//     page?: Page
+// }
 
-interface UseEventsResultsReturn {
-    data: EventsData;
-    error: Error | null;
-    isLoading: boolean;
-    fetchEvents: (term: string) => void;
-}
+// interface UseEventsResultsReturn {
+//     data: EventsData;
+//     error: Error | null;
+//     isLoading: boolean;
+//     fetchEvents: (term: string) => void;
+// }
 
 const HomePage = () => {
-    const { data, error, isLoading, fetchEvents }: UseEventsResultsReturn = useEventsResults();
+    const { data, error, isLoading, fetchEvents }= useEventsResults();
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const containerRef = useRef<HTMLDivElement>(null);
+    // const containerRef = useRef<HTMLDivElement>(null);
 
 
     const events = data?._embedded?.events || [];
     const page = data?.page || {};
 
 
-    const fetchMyEvents = useRef();
-    fetchMyEvents.current();
+    
+    // const fetchMyEvents = useRef();
+    // fetchMyEvents.current();
 
     useEffect(() => {
-        fetchMyEvents?.current()
+        try {
+            
+        } catch (error) {
+            
+        }
+        fetchEvents()
     }, []);
 
     const handleSearchTerm = (term: string) => {
@@ -47,9 +53,9 @@ const HomePage = () => {
         setSearchTerm(term)
     };
 
-    const handleClickPage = useCallback(({ selected }) => {
-        fetchEvents(`&keyword=${searchTerm}&page=${selected}`)
-    }, deps)
+    // const handleClickPage = useCallback(({ selected }) => {
+    //     fetchEvents(`&keyword=${searchTerm}&page=${selected}`)
+    // }, deps)
 
     if (isLoading) {
         return <div>Modal</div>
@@ -59,7 +65,7 @@ const HomePage = () => {
         return <div>Error</div>
     }
     return (
-        <div className={styles.homePage} ref={containerRef}>
+        <div className={styles.homePage}>
             <Events searchTerm={searchTerm} events={events} />
             HomePage
         </div>
